@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  reverse:
+    container_name: reverse
+    hostname: reverse
+    #image: nginx:latest
+    image: fholzer/nginx-brotli:latest
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx:/etc/nginx/
+      - ./logs:/var/log/nginx/
